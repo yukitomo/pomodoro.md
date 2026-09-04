@@ -51,6 +51,8 @@ Pick one in the extension preferences. Everything else works the same in both.
 | Setup needed | None | Point it at your notes folder |
 | Good for | Using it as a plain pomodoro timer | Planning in Obsidian, or with an LLM |
 
+![Manual mode: a task list kept inside Raycast, no files needed](metadata/pomodoro-md-5.png)
+
 ## Commands
 
 ### Start Pomodoro
