@@ -14,9 +14,9 @@ type ExtensionPreferences = {
   "dailyNotePath"?: string,
   /** Daily Note Filename - Path of today's note relative to the directory. YYYY, MM, DD are replaced with today's date (e.g. YYYY-MM-DD.md or YYYYMM/YYYY-MM-DD.md) */
   "dailyNoteFormat": string,
-  /** Pomodoro Duration (min) - Duration of one pomodoro in minutes */
+  /** Pomodoro Duration (Minutes) - Duration of one pomodoro in minutes */
   "pomoDuration": string,
-  /** Break Duration (min) - Duration of break in minutes */
+  /** Break Duration (Minutes) - Duration of break in minutes */
   "breakDuration": string,
   /** Timetable Header - Section header for timetable in daily notes */
   "timetableHeader": string,
