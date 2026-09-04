@@ -67,8 +67,6 @@ If a pomodoro is already running, picking another task asks for confirmation and
 
 Stops the current pomodoro, writes its log entry, and starts a break — **remembering the task you were on**. When the break ends, the task list opens with a one-key **Resume** action for that task, so you don't have to find it again.
 
-![The menu bar during a break, counting down with stop and switch task actions](media/pomodoro-md-break.png)
-
 ### Quick Start
 
 Starts a pomodoro on a task name you configure once (e.g. `Morning Routine`) without opening any list. Anything already running is stopped and logged first.
@@ -79,9 +77,11 @@ Ends the current pomodoro or break. A stopped-early pomodoro is still logged, ma
 
 ### Pomodoro.md Timer (menu bar)
 
-Keeps the remaining time in the menu bar while you work, with the current task name and actions to stop or switch tasks.
+Keeps the remaining time in the menu bar while you work, with the current task name and actions to stop or switch tasks. Breaks count down the same way.
 
-![The menu bar showing the remaining time, with stop and switch task actions](metadata/pomodoro-md-6.png)
+![The menu bar during a pomodoro: remaining time, current task, stop and switch task actions](media/menu-bar-pomodoro.png)
+
+![The menu bar during a break](media/menu-bar-break.png)
 
 ## Daily Note Setup
 
