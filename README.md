@@ -11,11 +11,13 @@ Pomodoro.md uses plain markdown as its interface instead. Your daily plan is a m
 ```markdown
 # Timetable
 
-## Morning (09:00~12:00) 4p
+## Morning (09:00~12:00) 6p
 - 1p Morning routine
-- 2p #482 : Ship the onboarding redesign
+- 3p #482 : Ship the onboarding redesign
 	- Review design feedback
+	- Implement the new welcome screen
 	- Write release notes
+- 2p Reply to code reviews
 ```
 
 It becomes a task list in Raycast. Pick a task, run pomodoros:
@@ -47,7 +49,7 @@ Pick one in the extension preferences. Everything else works the same in both.
 | | **Manual** (default) | **Daily Note** |
 |---|---|---|
 | Tasks come from | Typed into Raycast | A markdown timetable in your notes |
-| Session log goes to | Raycast only (last 30 days) | Written into today's note as markdown |
+| Session log goes to | Nowhere — Manual mode keeps no log | Written into today's note as markdown |
 | Setup needed | None | Point it at your notes folder |
 | Good for | Using it as a plain pomodoro timer | Planning in Obsidian, or with an LLM |
 
@@ -81,7 +83,7 @@ Ends the current pomodoro or break. A stopped-early pomodoro is still logged, ma
 
 ### Pomodoro.md Timer (menu bar)
 
-Keeps the remaining time in the menu bar while you work, with the current task name and actions to stop or switch tasks. Breaks count down the same way.
+Keeps the remaining time in the menu bar while you work, with the current task name and actions to stop or switch tasks. Breaks count down the same way. When the time is up, it opens the task list with a **Start Break** / **Resume** prompt.
 
 ![The menu bar during a pomodoro: remaining time, current task, stop and switch task actions](media/menu-bar-pomodoro.png)
 
@@ -89,7 +91,7 @@ Keeps the remaining time in the menu bar while you work, with the current task n
 
 ## Manual Mode
 
-The default, and the one to use if you just want a pomodoro timer. Tasks live inside Raycast: type a name into **Start Pomodoro** to add one and start it, then **Mark as Done** or **Remove Task** from the action panel (`⌘K`). Nothing is written to disk, so there is no setup — switch to Daily Note mode whenever you want the log in your notes.
+The default, and the one to use if you just want a pomodoro timer. Tasks live inside Raycast: type a name into **Start Pomodoro** to add one and start it, then **Mark as Done** or **Remove Task** from the action panel (`⌘K`). No files are written, so there is no setup — switch to Daily Note mode whenever you want the log in your notes.
 
 ![Manual mode: a task list kept inside Raycast](metadata/pomodoro-md-5.png)
 
@@ -108,9 +110,9 @@ Only two lines matter:
 
 Optional extras:
 
-- `(09:00~12:00)` after the block name, and `4p` at the end of it, are shown as-is
+- `(09:00~12:00)` after the block name is shown next to it; a trailing `6p` (planned total) is accepted and ignored
 - `	- Subtask title` — a subtask, indented with a tab or 2+ spaces
-- `[done]` right after `Np` marks a task or subtask as already finished
+- `[done]` after `Np` (or after `- ` on a subtask) marks it as already finished
 - Blocks named after a **Break Keyword** (`Break`, `Lunch`) are skipped
 - Markdown links in titles are displayed as their link text
 
@@ -135,11 +137,12 @@ Each finished session appends one line under its task's bullet in the **Pomodoro
 
 ## Limitations
 
-- **Manual mode writes no markdown.** Sessions are kept inside Raycast for 30 days and never reach a file. Markdown logging is what Daily Note mode is for.
+- **Manual mode keeps no log.** Nothing is written anywhere; Raycast only remembers your last task so you can resume it. Markdown logging is what Daily Note mode is for.
 - **Only today's note is written.** Pomodoro.md never edits an older note, and it does not create the note either — if today's file doesn't exist yet, the log is skipped. A session that runs past midnight is logged in the note for the day it *ended*.
 - **The menu bar countdown updates every 10 seconds** in the background — Raycast's minimum interval — and every second while the menu is open.
+- **End-of-timer prompts come from the menu bar command.** If you disable Pomodoro.md Timer, a finished pomodoro is still logged by whichever command you run next, but nothing opens when the time is up.
 - **Task lines must start at the left margin** (`- 2p …`), and **subtasks must be indented** with a tab or at least two spaces; a single space is not recognised.
-- **Tasks are matched by title** when marking them done, so two tasks whose titles start identically can be ambiguous.
+- **Tasks are matched by title** when marking them done, so two tasks that share the same first 20 characters can be ambiguous.
 
 ## Development
 
