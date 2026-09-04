@@ -67,6 +67,10 @@ If a pomodoro is already running, picking another task asks for confirmation and
 
 Stops the current pomodoro, writes its log entry, and starts a break — **remembering the task you were on**. When the break ends, the task list opens with a one-key **Resume** action for that task, so you don't have to find it again.
 
+![Pomodoro complete: the finished task, with Start Break as the next action](metadata/pomodoro-md-3.png)
+
+![Break's over: a one-key Resume for the task you were on](metadata/pomodoro-md-4.png)
+
 ### Quick Start
 
 Starts a pomodoro on a task name you configure once (e.g. `Morning Routine`) without opening any list. Anything already running is stopped and logged first.
