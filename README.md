@@ -51,8 +51,6 @@ Pick one in the extension preferences. Everything else works the same in both.
 | Setup needed | None | Point it at your notes folder |
 | Good for | Using it as a plain pomodoro timer | Planning in Obsidian, or with an LLM |
 
-![Manual mode: a task list kept inside Raycast, no files needed](metadata/pomodoro-md-5.png)
-
 ## Commands
 
 ### Start Pomodoro
@@ -88,6 +86,12 @@ Keeps the remaining time in the menu bar while you work, with the current task n
 ![The menu bar during a pomodoro: remaining time, current task, stop and switch task actions](media/menu-bar-pomodoro.png)
 
 ![The menu bar during a break](media/menu-bar-break.png)
+
+## Manual Mode
+
+The default, and the one to use if you just want a pomodoro timer. Tasks live inside Raycast: type a name into **Start Pomodoro** to add one and start it, then **Mark as Done** or **Remove Task** from the action panel (`⌘K`). Nothing is written to disk, so there is no setup — switch to Daily Note mode whenever you want the log in your notes.
+
+![Manual mode: a task list kept inside Raycast](metadata/pomodoro-md-5.png)
 
 ## Daily Note Setup
 
