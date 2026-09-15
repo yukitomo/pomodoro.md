@@ -24,7 +24,7 @@ type ExtensionPreferences = {
   "logSectionHeader": string,
   /** Pomodoro Log Header - Sub-header for pomodoro log entries */
   "pomodoroLogHeader": string,
-  /** Break Keywords - Comma-separated keywords to identify break blocks */
+  /** Break Keywords - Comma-separated block names to skip as breaks. A block is skipped when its name (without the time range) equals a keyword, ignoring case */
   "breakKeywords": string,
   /** Quick Start Task Name - Default task name for Quick Start command */
   "quickStartTask": string,
